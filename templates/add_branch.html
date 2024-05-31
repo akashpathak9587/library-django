@@ -1,0 +1,21 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form container">
+    <div class="row">
+        <form action="add_branch" method="post">
+            {% csrf_token %}
+            <h1>Add Branch</h1>
+            <input type="text" name="name" placeholder="Branch Name" required>
+            {% if success %}
+            {{ success}}
+            {% endif %}
+            {% if error %}
+            {{ error}}
+            {% endif %}
+            <button>Add</button>
+        </form>
+        <a href="dashboard">Back</a>
+    </div>
+</div>
+{% endblock %}

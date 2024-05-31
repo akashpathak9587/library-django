@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container dashboard">
+    <h1>Welcome {{student.name}}</h1>
+
+    <div class="row">
+        <div class="col">
+            <img src="https://themewagon.github.io/purple-react/static/media/circle.953c9ca0.svg" alt="">
+            <a href="view_books">View Available Books</a>
+        </div>
+        <div class="col">
+            <img src="https://themewagon.github.io/purple-react/static/media/circle.953c9ca0.svg" alt="">
+            <a href="view_issued_books">View Your Borrowed Books</a>
+        </div>
+        <div class="col">
+            <img src="https://themewagon.github.io/purple-react/static/media/circle.953c9ca0.svg" alt="">
+            <a href="modify_student">Modify Details</a>
+        </div>
+        <div class="col">
+            <img src="https://themewagon.github.io/purple-react/static/media/circle.953c9ca0.svg" alt="">
+            <a href="logout">Logout</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

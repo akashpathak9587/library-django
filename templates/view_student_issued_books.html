@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="table container">
+    <h1>Borrowed Book</h1>
+    <table border="0">
+        <tr class="table_heading">
+            <th>Book Name</th>
+            <th>Issue Date</th>
+            <th>Return Date</th>
+        </tr>
+
+        {% for issue in issues %}
+        <tr class="table_data">
+            <td>{{issue.book.name}}</td>
+            <td>{{issue.issue_date}}</td>
+            <td>{{issue.return_date}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="table container">
+    <h1>Students</h1>
+    <table border="0">
+        <tr class="table_heading">
+            <th>Name</th>
+            <th>Email</th>
+            <th>Branch</th>
+            <th>Semester</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+            <th colspan="2">Action</th>
+        </tr>
+
+        {% for student in students %}
+        <tr class="table_data">
+            <td>{{student.name}}</td>
+            <td>{{student.email}}</td>
+            <td>{{student.branch}}</td>
+            <td>{{student.semester}}</td>
+            <td>{{student.created_at}}</td>
+            <td>{{student.updated_at}}</td>
+            <td><a href="edit_student/{{student.id}}">Edit</a></td>
+            <td><a href="delete_student/{{student.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

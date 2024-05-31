@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="table container">
+    <h1>Books Available</h1>
+    <table border="0">
+        <tr class="table_heading">
+            <th>Book Name</th>
+            <th>Book Author</th>
+            <th>Branch</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+            <th colspan="2">Action</th>
+        </tr>
+
+        {% for book in books %}
+        <tr class="table_data">
+            <td>{{book.name}}</td>
+            <td>{{book.author}}</td>
+            <td>{{book.branch}}</td>
+            <td>{{book.created_at}}</td>
+            <td>{{book.updated_at}}</td>
+            <td><a href="edit_book/{{book.id}}">Edit</a></td>
+            <td><a href="delete_book/{{book.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="container dashboard">
+    <h1>Welcome {{user.username}}</h1>
+
+    <div class="row">
+        <div class="col">
+            <img src="https://themewagon.github.io/purple-react/static/media/circle.953c9ca0.svg" alt="">
+            <a href="view_books">View Books</a>
+        </div>
+        <div class="col">
+            <img src="https://themewagon.github.io/purple-react/static/media/circle.953c9ca0.svg" alt="">
+            <a href="add_book">Add Books</a>
+        </div>
+        <div class="col">
+            <img src="https://themewagon.github.io/purple-react/static/media/circle.953c9ca0.svg" alt="">
+            <a href="view_students">View Students</a>
+        </div>
+        <div class="col">
+            <img src="https://themewagon.github.io/purple-react/static/media/circle.953c9ca0.svg" alt="">
+            <a href="add_student">Add Students</a>
+        </div>
+        <div class="col">
+            <img src="https://themewagon.github.io/purple-react/static/media/circle.953c9ca0.svg" alt="">
+            <a href="view_issued_books">View Issued Books</a>
+        </div>
+        <div class="col">
+            <img src="https://themewagon.github.io/purple-react/static/media/circle.953c9ca0.svg" alt="">
+            <a href="issue_book">Issue Books</a>
+        </div>
+        <div class="col">
+            <img src="https://themewagon.github.io/purple-react/static/media/circle.953c9ca0.svg" alt="">
+            <a href="return_book">Return Books</a>
+        </div>
+        <div class="col">
+            <img src="https://themewagon.github.io/purple-react/static/media/circle.953c9ca0.svg" alt="">
+            <a href="add_branch">Add Branch</a>
+        </div>
+        <div class="col">
+            <img src="https://themewagon.github.io/purple-react/static/media/circle.953c9ca0.svg" alt="">
+            <a href="logout">Logout</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

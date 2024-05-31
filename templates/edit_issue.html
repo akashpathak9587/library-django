@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form container">
+    <div class="row">
+        <form action="#" method="post">
+            {% csrf_token %}
+            <h1>Edit Issue</h1>
+            <input type="text" name="book" placeholder="Book Name" id="searchBox" value="{{ issue.book.name }}" required>
+            <input type="email" name="student" placeholder="Student Email" value="{{ issue.student.email }}" required>
+            <input placeholder="return date" class="textbox-n" type="text" onfocus="(this.type='date')"
+                onblur="(this.type='text')" id="date" value="{{ issue.return_date }}" name="date" required>
+            {% if success %}
+            {{ success}}
+            {% endif %}
+            {% if error %}
+            {{ error}}
+            {% endif %}
+            <button>Save</button>
+        </form>
+        <a href="{% url 'dashboard' %}">Back</a>
+    </div>
+</div>
+
+{% endblock %}

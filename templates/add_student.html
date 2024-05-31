@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form container">
+    <div class="row">
+        <form action="add_student" method="post">
+            {% csrf_token %}
+            <h1>Add Student</h1>
+            <input type="text" name="name" placeholder="Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <input type="password" name="password" id="Password" placeholder="Password" required>
+            <select name="branch" id="branch" required>
+                <option value="">--Select Branch--</option>
+                {% for branch in branches %}
+                <option value="{{branch.name}}">{{branch.name}}</option>
+                {% endfor %}
+            </select>
+            <input type="number" name="semester" id="semester" placeholder="Semester" required>
+            {% if success %}
+            {{ success}}
+            {% endif %}
+            {% if error %}
+            {{ error}}
+            {% endif %}
+            <button>Add Student</button>
+        </form>
+        <a href="dashboard">Back</a>
+    </div>
+</div>
+{% endblock %}

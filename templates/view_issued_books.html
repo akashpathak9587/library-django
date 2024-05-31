@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="table container">
+    <h1>Issued Book</h1>
+    <table border="0">
+        <tr class="table_heading">
+            <th>Book Name</th>
+            <th>Student Name</th>
+            <th>Issue Date</th>
+            <th>Return Date</th>
+            <th>Created At</th>
+            <th>Updated At</th>
+            <th colspan="2">Action</th>
+        </tr>
+
+        {% for issue in issues %}
+        <tr class="table_data">
+            <td>{{issue.book.name}}</td>
+            <td>{{issue.student.name}}</td>
+            <td>{{issue.issue_date}}</td>
+            <td>{{issue.return_date}}</td>
+            <td>{{issue.created_at}}</td>
+            <td>{{issue.updated_at}}</td>
+            <td><a href="edit_issue/{{issue.id}}">Edit</a></td>
+            <td><a href="delete_issue/{{issue.id}}">Delete</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="login container">
+    <div class="row">
+        <div class="col">
+            <img src="https://images.unsplash.com/photo-1568667256549-094345857637?q=80&w=2815&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                alt="Library">
+        </div>
+        <div class="col d-flex">
+            <h1>Welcome</h1>
+            <form action="login" method="post">
+                {% csrf_token %}
+                <input type="text" name="username" id="username" placeholder="Username" required> <br>
+                <input type="password" name="password" id="password" placeholder="Password" required>
+                {% if error %}
+                <p class="error">{{error}}</p>
+                {% endif %}
+                <button>Login</button>
+            </form>
+            <a href="admin_signup">Admin Signup</a>
+            <a href="student_signup">Student Signup</a>
+        </div>
+    </div>
+</div>
+{% endblock %}

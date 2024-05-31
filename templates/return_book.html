@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<div class="form container">
+    <div class="row">
+        <form action="return_book" method="post" autocomplete="off">
+            {% csrf_token %}
+            <h1>Return Book</h1>
+
+            <input type="text" name="book" placeholder="Book Name" id="searchBox" required>
+            <input type="email" name="student" placeholder="Student Email" required>
+            {% if success %}
+            {{ success}}
+            {% endif %}
+            {% if error %}
+            {{ error}}
+            {% endif %}
+            <button>Return</button>
+        </form>
+        <a href="dashboard">Back</a>
+    </div>
+</div>
+
+{% endblock %}
